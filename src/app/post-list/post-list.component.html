@@ -1,0 +1,18 @@
+<div style="margin: .5em 5em .5em .5em; background-color: antiquewhite;">
+<ng-container *ngFor="let viewpost of allposts">
+    <div style="display: inline-block;">
+        <app-one-post [post]="viewpost"></app-one-post>
+    </div>
+    <div style="margin: 0em 2em; display: inline-block;">
+        <button (click)="delete(viewpost.title)">Delete</button>
+    </div>
+    <br/><br/>
+</ng-container>
+</div>
+
+<div style="background-color: bisque;margin: .5em 5em .5em .5em">
+<div>Add a New Post:</div><br/>
+<div>Title: <input type="text" [(ngModel)]="newtitle"/></div>
+<div>Thought: <input type="text" [(ngModel)]="newthought"/></div>
+<button (click)="add()">Add</button>
+</div>
